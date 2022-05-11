@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: kodekloud-deployment
+  labels:
+    app: kodekloud
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: kodekloud
+  template:
+    metadata:
+      labels:
+        app: kodekloud
+    spec:
+      containers:
+      - name: kodekloud
+        image: kodekloud
+        ports:
+        - containerPort: 80
+
